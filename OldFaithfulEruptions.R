@@ -1,48 +1,58 @@
+## View the data (faithful is a dataset built into R)
+
 head(faithful)
 View(faithful)
 
-#Data collection and viewing.
+#Data collection
+## Making a vector out of the eruption times.
 
-eruptions.times <- faithful$eruptions
+eruption.times <- faithful$eruptions
+print(eruption.times)
 
-#Making one general vector out of the eruption times column in the data set.
+## Now separate out the shorter eruption times (those under 3 minutes),
+## Creating a vector named short.times
 
 short.times <- eruptions.times [eruptions.times <=3]
-#I named this "short.times" because "short" seems to be a function in R.
 
-View(short)
+## Next, create a second vector named long.times for those
+## eruptions over 3 minutes.
 
 long.times <- eruptions.times [eruptions.times >3]
-#Named "long.times" to follow suit with "short.times".
+
+## View the vectors created.
 
 short.times
 long.times
 
-#Running to see that my full data would be produced in the vectors.
+## Now sample statistics can be generated.
+
+## First, finding the number of cases in each vector:
 
 length(short.times)
+## 97
 
 length(long.times)
+## 175
+
+## Means
 
 mean(short.times)
+## 2.04
 
 mean(long.times)
+## 4.29
+
+## Standard deviation
 
 sd(short.times)
+## 0.27
 
 sd(long.times)
+## 0.41
 
-#Above are all of sample statistics that I was asked to run for this Hands On!
 
 #Once upon a time there was a little girl who grew up in a world where Data Science did not exist.
 #When she grew up Data Science was an emerging field at just the right time.
 #She learned that computer programming was now not as big and scary and she once thought it was.
-
-#To call up a dataset for the first time:
-
-library(datasets)
-faithful
-
-#Start with "library(datasets), then type name of dataset on the second line.
 
 
